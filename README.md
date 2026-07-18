@@ -25,6 +25,7 @@ yourusername.github.io/
 - <p> xxx </p> creates new paragraph
 - <br> acts like \n
 - <pre> xxx </pre> prevents collapse within (preserves space)
+- <div> xxx </div> separates lines into individual blocks
 
 unicode copy here:
 │

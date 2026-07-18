@@ -1,20 +1,19 @@
 body {
     margin: 0;
+
     background: white;
-    color: #333;
+    color: #333333;
+
     font-family: monospace;
     font-size: 20px;
 }
 
 main {
-    margin-top: 10;
-    margin-left: 10;
-}
-pre {
     margin: 0;
 }
+
 a {
-    color: #333;
+    color: #333333;
     text-decoration: none;
 }
 

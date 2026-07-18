@@ -2,23 +2,50 @@
 Brandon's personal domain
 
 final intended format:
-brandon yip</div>
+brandon yip
     
-├── about_me</div>
-│   └── <a href="about.html">intro.txt</a></div>
+├── about_me
+│   ├── >intro.txt
+│   └── > stats.txt (private)
 
-├── projects</div>
-│   ├── <a href="projects/cs-clash.html">cs_clash.c</a></div>
-│   └── <a href="projects/chemistry.html">chemistry.txt</a></div>
+├── interests
+│   ├── >articles (on Substack)
+│   ├── >books.txt
+│   ├── >food
+│        └── hk.txt
+│        └── syd.txt
+│   ├── >movies.txt
+│   ├── >music.txt
+│   ├── >guitar.txt
+│   └── >japanese.txt
 
-├── interests</div>
-│   ├── <a href="interests/music.html">music.txt</a></div>
-│   ├── <a href="interests/guitar.html">guitar.txt</a></div>
-│   └── <a href="interests/japanese.html">japanese.txt</a></div>
+├── favourites (gold stash)
+│   ├── >articles (on Substack)
+│   ├── >books
+│   ├── >music_albums
+│   └── >movies
 
-└── contact</div>
-<div>    └── <a href="contact.html">email.txt</a></div>
-</main>
+├── monthly_suggestions
+│   ├── >articles (on Substack)
+│   ├── >books
+│   ├── >music_albums
+│   └── >movies
+
+├── projects
+│   ├── >cs_clash.c
+│   └── >cs_duck_life.c
+
+├── archives
+│   ├── >physical_media
+│        └── list_of_CDs_I_own
+│        └── list_of_vinyls_I_own
+│   ├── >
+│   └── >
+
+├── miscellaneneous
+├── timeline (maybe private)
+└── contact
+    └── >email.txt
 
 - index.html loads style.css which contains visual designs
 - <html lang="en"> marks beginning of prog

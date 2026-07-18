@@ -10,7 +10,9 @@ main {
     margin-top: 0;
     margin-left: 0;
 }
-
+pre {
+    margin: 0;
+}
 a {
     color: #333;
     text-decoration: none;

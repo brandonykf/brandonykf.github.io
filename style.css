@@ -1,30 +1,17 @@
 body {
-    margin: 0;
-
-    background-color: white;
-    color: #333333;
+    background: white;
+    color: #333;
 
     font-family: monospace;
     font-size: 13px;
 }
 
 main {
-    margin-top: 40px;
-    margin-left: 40px;
-}
-
-h1 {
-    font-size: 13px;
-    font-weight: normal;
-    margin-bottom: 25px;
-}
-
-.file-tree p {
-    margin: 3px 0;
+    margin: 40px;
 }
 
 a {
-    color: #333333;
+    color: #333;
     text-decoration: none;
 }
 

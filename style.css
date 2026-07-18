@@ -1,13 +1,14 @@
 body {
+    margin: 0;
     background: white;
     color: #333;
-
     font-family: monospace;
-    font-size: 13px;
+    font-size: 20px;
 }
 
 main {
-    margin: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 a {

@@ -22,4 +22,6 @@ yourusername.github.io/
 - index.html loads style.css which contains visual designs
 - <html lang="en"> marks beginning of prog
 - head contains information about the page, rather than the visible page content
-- 
+- <p> xxx </p> creates new paragraph
+- <br> acts like \n
+- <pre> xxx </pre> prevents collapse within (preserves space)

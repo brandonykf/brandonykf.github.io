@@ -54,7 +54,9 @@ brandon yip
 - <br> acts like \n
 - <pre> xxx </pre> prevents collapse within (preserves space)
 - <div> xxx </div> separates lines into individual blocks
+- https://www.nerdfonts.com/
 
+- 
 unicode copy here:
 │
 ├

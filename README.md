@@ -2,12 +2,9 @@
 Brandon's personal domain
 
 final intended format:
-yourusername.github.io/
-│
-├── index.html
-├── style.css
-│
-├── about.html
+Brandon Yip
+├── about_me
+│  └─
 ├── contact.html
 │
 ├── projects/

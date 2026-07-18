@@ -25,3 +25,13 @@ yourusername.github.io/
 - <p> xxx </p> creates new paragraph
 - <br> acts like \n
 - <pre> xxx </pre> prevents collapse within (preserves space)
+
+unicode copy here:
+│
+├
+└
+─
+┌
+┐
+┘
+┼

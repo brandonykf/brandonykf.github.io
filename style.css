@@ -14,45 +14,18 @@ body {
 
 main {
     margin: 0;
-    line-height: 20px;
+    line-height: 20.5px;
 }
 
 main div {
     white-space: pre;
 }
 
-.ascii-box {
-    position: fixed;
-
-    top: 25px;
-    right: 5px;
-
-   /* width: 200px; */
-    height: 800px;
-    padding: 20px;
-
-    font-family: "JetBrains Mono", monospace;
-    font-size: 11px;
-    font-weight: bold;
-
-    background-color: transparent;
-    overflow: auto;
+.heading {
+    color: #960e0e;
+    /* or color: purple . classic is #0000EE */
+    font-weight: 500;
 }
-
-.ascii-box pre {
-    margin: 0;
-    width: max-content;
-    background-color: pink;
-}
-
-@media (max-width: 1100px) {
-    .ascii-box {
-        font-size: 6px;
-        pointer-events: none;
-    }
-}
-
-
 
 strong {
     font-weight: 700;
@@ -67,3 +40,45 @@ a:hover {
     text-decoration: underline;
     background-color: deeppink;
 }
+
+
+
+.ascii-box {
+    position: fixed;
+
+    top: 30px;
+    right: 20px;
+
+    max-width: calc(100vw - 20px);
+    height: 800px;
+    padding: 20px;
+
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    font-weight: bold;
+
+    background-color: transparent;
+    overflow: auto;
+
+    display: inline-block;
+}
+
+.ascii-box pre {
+    margin: 0;
+    background-color: transparent;
+    white-space: pre;
+}
+
+.ascii-box pre span {
+    background-color: rgb(154, 227, 37);
+    display: inline-block;
+}
+
+@media (max-width: 1100px) {
+    .ascii-box {
+        font-size: 6px;
+        pointer-events: none;
+    }
+}
+
+

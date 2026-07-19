@@ -74,10 +74,35 @@ a:hover {
     display: inline-block;
 }
 
+.ascii-box.stacked {
+    position: static;
+    top: auto;
+    right: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 30px;
+    padding: 10px 0;
+    font-size: 6px;
+    overflow-x: auto;
+    overflow-y: visible;
+    pointer-events: auto;
+}
+
 @media (max-width: 1100px) {
     .ascii-box {
+        position: static;
+        top: auto;
+        right: auto;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-top: 30px;
+        padding: 10px 0;
         font-size: 6px;
-        pointer-events: none;
+        overflow-x: auto;
+        overflow-y: visible;
+        pointer-events: auto;
     }
 }
 

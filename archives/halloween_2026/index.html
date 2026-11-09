@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>halloween '26 — brandonykf</title>
+  <style>
+    /* HALLOWEEN '26 — early swag / iOS 6 x iOS 7 / photo diary */
+    :root { --blue:#007aff; --line:#d8dce2; --muted:#818895; --ink:#21242a; --pink:#ff168b; --lime:#bcff00; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#fff; color:var(--ink); font:13px/1.65 Arial, Helvetica, sans-serif; -webkit-font-smoothing:antialiased; }
+    a { color:var(--blue); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    button { font:inherit; cursor:pointer; }
+    .topbar { height:58px; background:linear-gradient(#fcfdff,#f4f5f8 48%,#dce2ec); border-bottom:1px solid #b8c3d2; box-shadow:inset 0 1px #fff, 0 1px 3px #e5e5e5; }
+    .topbar-inner { max-width:790px; margin:auto; padding:0 20px; height:100%; display:flex; justify-content:space-between; align-items:center; gap:10px; }
+    .topbar-name { font-weight:700; color:#3f4652; text-align:center; font-size:13px; }
+    .ios-btn { color:#fff; font-weight:600; border:1px solid #7c94b1; border-radius:7px; padding:5px 11px; background:linear-gradient(#b9c9de 0%, #7e9abf 48%, #5679a2 49%, #728eaf 100%); text-shadow:0 -1px #526d8e; box-shadow:inset 0 1px 1px #e5edf6,0 1px #fff; white-space:nowrap; }
+    .ios-btn:hover { text-decoration:none; filter:brightness(1.05); }
+    .topbar-dots { color:#6a83a5; letter-spacing:2px; font-size:18px; }
+    main { max-width:790px; padding:42px 20px 80px; margin:0 auto; }
+    .kicker { color:var(--blue); text-transform:uppercase; letter-spacing:2px; font-size:10px; font-weight:700; }
+    h1 { font-size:clamp(30px,6vw,49px); line-height:1.1; letter-spacing:-1.9px; font-weight:700; margin:8px 0 8px; }
+    .date { font-size:11px; color:var(--muted); letter-spacing:.65px; }
+    .intro { font-size:14px; margin:23px 0 25px; }
+    .ipod-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:3px; height:99px; overflow:hidden; margin:23px 0 30px; }
+    .swatch { position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .swatch:nth-child(1) { background:#0785ff; } .swatch:nth-child(2) { background:#ff168b; } .swatch:nth-child(3) { background:#c5ff00; } .swatch:nth-child(4) { background:linear-gradient(115deg,#d4d9e1,#fff 39%,#a9b2be 63%,#eff1f5); }
+    .swatch .person { width:42px; height:65px; position:relative; transform:rotate(-12deg); }
+    .person:before { content:""; position:absolute; width:21px; height:21px; background:#171717; border-radius:50%; left:12px; top:0; }
+    .person:after { content:""; position:absolute; width:32px; height:44px; background:#171717; left:8px; top:23px; border-radius:11px 14px 3px 4px; transform:skew(-8deg); }
+    .swatch:nth-child(2) .person { transform:rotate(16deg); }
+    .swatch:nth-child(3) .person { transform:rotate(-20deg); }
+    .silhouette-arm { position:absolute; width:8px; height:34px; background:#171717; z-index:2; border-radius:7px; left:1px; top:19px; transform:rotate(40deg); }
+    .silhouette-arm.right { left:34px; top:18px; transform:rotate(-44deg); }
+    .cable { position:absolute; width:20px; height:47px; border:2px solid white; border-top:0; border-radius:0 0 12px 12px; left:17px; top:16px; z-index:3; transform:rotate(7deg); opacity:.92; }
+    .swatch-tag { font-size:10px; color:#636a74; font-weight:700; letter-spacing:3px; }
+    .rule { border:0; border-top:1px solid var(--line); margin:25px 0; }
+    .section-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0 0 14px; }
+    .section-head h2 { font-size:15px; letter-spacing:-.1px; margin:0; }
+    .counter { color:var(--muted); font-size:11px; }
+    .photo-entry { margin:0 0 45px; }
+    .photo-button { border:0; background:#f3f5f7; padding:0; display:block; width:100%; text-align:left; position:relative; overflow:hidden; }
+    .photo-button img { display:block; width:100%; height:auto; max-height:740px; object-fit:contain; background:#f6f7f8; }
+    .photo-button:focus-visible { outline:3px solid var(--blue); outline-offset:2px; }
+    .photo-fallback { display:none; aspect-ratio:4/3; align-items:center; justify-content:center; flex-direction:column; color:#9ba3b0; background:repeating-linear-gradient(45deg,#fafbfc,#fafbfc 12px,#f1f3f6 12px,#f1f3f6 24px); text-align:center; font-size:12px; padding:20px; gap:5px; }
+    .photo-fallback strong { color:#737d8b; font-size:14px; }
+    .photo-button.is-missing img { display:none; }
+    .photo-button.is-missing .photo-fallback { display:flex; }
+    .photo-meta { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:9px 0 0; font-size:11px; color:var(--muted); }
+    .photo-meta span:last-child { color:var(--blue); }
+    .caption { margin-top:3px; color:#454b55; font-size:12px; }
+    .album-tools { display:flex; align-items:center; gap:12px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:13px 0; margin:8px 0 32px; color:var(--muted); font-size:12px; }
+    .album-tools .heart { color:var(--pink); font-size:18px; line-height:1; }
+    .album-tools .spacer { flex:1; }
+    .pagination { display:flex; align-items:center; gap:12px; }
+    .pagination button { border:none; background:none; font-size:19px; color:var(--blue); padding:0 3px; }
+    .pagination button:disabled { color:#c1c8d1; cursor:default; }
+    .dot-track { display:flex; gap:5px; align-items:center; }
+    .dot-track span { width:7px; height:7px; border-radius:50%; background:#d7dce2; }
+    .dot-track span.active { background:var(--blue); width:16px; border-radius:5px; }
+    footer { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:11px; padding-top:12px; }
+    /* fullscreen photo viewer; styled after early iPhone Photos */
+    .viewer { display:none; position:fixed; inset:0; z-index:100; background:#090909; color:#fff; flex-direction:column; }
+    .viewer.open { display:flex; }
+    .viewer-top { flex:none; display:flex; align-items:center; justify-content:space-between; gap:10px; min-height:55px; padding:9px 15px; background:linear-gradient(#424242,#141414); border-bottom:1px solid #000; }
+    .viewer-top button { color:#fff; border:1px solid #151515; background:linear-gradient(#6a6a6a,#333); border-radius:6px; padding:6px 11px; }
+    .viewer-title { color:#ddd; font-size:12px; text-align:center; }
+    .viewer-imgwrap { min-height:0; flex:1; display:flex; align-items:center; justify-content:center; padding:14px; }
+    .viewer-imgwrap img { max-width:100%; max-height:100%; object-fit:contain; }
+    .viewer-bottom { flex:none; display:flex; justify-content:center; align-items:center; gap:28px; padding:10px; background:linear-gradient(#303030,#151515); border-top:1px solid #555; }
+    .viewer-bottom button { background:none; border:0; color:#fff; font-size:25px; padding:0 12px; }
+    .viewer-bottom span { color:#bbb; font-size:12px; }
+    @media (max-width:560px) { .topbar-inner { padding:0 12px; } main { padding:28px 15px 55px; } .ipod-strip { height:77px; } .photo-entry { margin-bottom:33px; } .intro { margin:17px 0; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <nav class="topbar" aria-label="Page navigation">
+    <div class="topbar-inner">
+      <a class="ios-btn" href="../../index.html">‹ home</a>
+      <span class="topbar-name">halloween_2026</span>
+      <span class="topbar-dots" aria-hidden="true">•••</span>
+    </div>
+  </nav>
+
+  <main>
+    <div class="kicker">brandonykf / archives / photos</div>
+    <h1>halloween party '26</h1>
+    <div class="date">31 OCTOBER 2026 &nbsp; / &nbsp; SYDNEY, AU</div>
+    <p class="intro">some pictures from that night. thanks for coming :)</p>
+
+    <!-- Inspired by bright 2000s iPod-era advertising; decorative only. -->
+    <div class="ipod-strip" aria-hidden="true">
+      <div class="swatch"><div class="person"><i class="silhouette-arm"></i><i class="silhouette-arm right"></i><i class="cable"></i></div></div>
+      <div class="swatch"><div class="person"><i class="silhouette-arm"></i><i class="silhouette-arm right"></i><i class="cable"></i></div></div>
+      <div class="swatch"><div class="person"><i class="silhouette-arm"></i><i class="silhouette-arm right"></i><i class="cable"></i></div></div>
+      <div class="swatch"><span class="swatch-tag">PARTY<br>PIX '26</span></div>
+    </div>
+
+    <hr class="rule">
+    <div class="section-head"><h2>camera roll</h2><span class="counter" id="photoCount">03 photos</span></div>
+    <div class="album-tools"><span class="heart">♥</span><span>31.10.26 / photo diary</span><span class="spacer"></span><a href="#end">end of post ↓</a></div>
+
+    <!-- EDIT YOUR PHOTOS HERE. Upload the matching image files to /photos/.
+         Add more entries by copying an object in the photoData array below. -->
+    <div id="photoFeed"></div>
+
+    <div class="album-tools" id="end"><span>you've reached the end.</span><span class="spacer"></span><div class="pagination"><button type="button" id="prev" aria-label="Previous photo">‹</button><span class="dot-track" id="dots"></span><button type="button" id="next" aria-label="Next photo">›</button></div></div>
+    <footer><a href="../../index.html">‹ back to home</a><span>posted 09.11.2026 · brandonykf</span></footer>
+  </main>
+
+  <div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+    <div class="viewer-top"><button type="button" id="closeViewer">‹ back</button><span class="viewer-title" id="viewerTitle"></span><span aria-hidden="true">✦</span></div>
+    <div class="viewer-imgwrap"><img id="viewerImage" alt=""></div>
+    <div class="viewer-bottom"><button type="button" id="viewerPrev" aria-label="Previous">‹</button><span id="viewerCounter"></span><button type="button" id="viewerNext" aria-label="Next">›</button></div>
+  </div>
+
+  <script>
+    // ADD / CHANGE PHOTOS AND CAPTIONS IN THIS LIST.
+    // Filenames are case-sensitive. E.g. DSC_0001.jpg must exist in photos/.
+    const photoData = [
+      { file: 'DSC_0001.jpg', caption: 'the beginning of the night.' },
+      { file: 'DSC_0002.jpg', caption: 'somewhere around midnight.' },
+      { file: 'DSC_0003.jpg', caption: 'last photos before everyone left.' }
+    ];
+
+    const feed = document.getElementById('photoFeed');
+    const viewer = document.getElementById('viewer');
+    const viewerImage = document.getElementById('viewerImage');
+    const viewerTitle = document.getElementById('viewerTitle');
+    const viewerCounter = document.getElementById('viewerCounter');
+    const dots = document.getElementById('dots');
+    let active = 0;
+    let lastFocus = null;
+
+    document.getElementById('photoCount').textContent = `${String(photoData.length).padStart(2,'0')} photos`;
+    photoData.forEach((photo, i) => {
+      const entry = document.createElement('section');
+      entry.className = 'photo-entry';
+      const button = document.createElement('button');
+      button.type = 'button'; button.className = 'photo-button';
+      button.setAttribute('aria-label', `Open photo ${i+1}`);
+      const img = document.createElement('img');
+      img.src = `photos/${photo.file}`; img.alt = photo.caption || `Halloween photo ${i+1}`; img.loading = i === 0 ? 'eager' : 'lazy';
+      img.addEventListener('error', () => { button.classList.add('is-missing'); button.disabled = true; });
+      const fallback = document.createElement('div');
+      fallback.className='photo-fallback';
+      const hint = document.createElement('strong'); hint.textContent = photo.file;
+      const explanation = document.createElement('span'); explanation.textContent = 'upload this photo to the photos/ folder';
+      fallback.append(hint, explanation); button.append(img, fallback);
+      button.addEventListener('click', () => openViewer(i));
+      const meta = document.createElement('div'); meta.className='photo-meta';
+      const filename = document.createElement('span'); filename.textContent=photo.file.toUpperCase();
+      const number = document.createElement('span'); number.textContent=`${String(i+1).padStart(2,'0')} / ${String(photoData.length).padStart(2,'0')}`;
+      meta.append(filename, number);
+      const caption = document.createElement('div'); caption.className='caption'; caption.textContent=photo.caption || '';
+      entry.append(button, meta, caption); feed.append(entry);
+      const dot = document.createElement('span'); dots.append(dot);
+    });
+    function setActive(index) {
+      active = (index+photoData.length)%photoData.length;
+      [...dots.children].forEach((dot, i) => dot.classList.toggle('active', i === active));
+    }
+    setActive(0);
+    function jumpTo(index) { setActive(index); feed.children[active].scrollIntoView({behavior:'smooth',block:'center'}); }
+    document.getElementById('prev').addEventListener('click', () => jumpTo(active-1));
+    document.getElementById('next').addEventListener('click', () => jumpTo(active+1));
+    function openViewer(index) {
+      setActive(index); lastFocus=document.activeElement;
+      viewerImage.src = `photos/${photoData[active].file}`;
+      viewerImage.alt=photoData[active].caption || 'Halloween photo';
+      viewerTitle.textContent=photoData[active].file.toUpperCase();
+      viewerCounter.textContent=`${active+1} of ${photoData.length}`;
+      viewer.classList.add('open'); viewer.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden'; document.getElementById('closeViewer').focus();
+    }
+    function closeViewer() {
+      viewer.classList.remove('open'); viewer.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+      if(lastFocus) lastFocus.focus();
+    }
+    function moveViewer(step) { openViewer(active+step); }
+    document.getElementById('closeViewer').addEventListener('click',closeViewer);
+    document.getElementById('viewerPrev').addEventListener('click',()=>moveViewer(-1));
+    document.getElementById('viewerNext').addEventListener('click',()=>moveViewer(1));
+    document.addEventListener('keydown', e => {
+      if(!viewer.classList.contains('open')) return;
+      if(e.key==='Escape') closeViewer();
+      if(e.key==='ArrowLeft') moveViewer(-1);
+      if(e.key==='ArrowRight') moveViewer(1);
+      if(e.key==='Tab') { e.preventDefault(); document.getElementById('closeViewer').focus(); }
+    });
+    let touchStart=0;
+    viewer.addEventListener('touchstart',e=>{touchStart=e.changedTouches[0].screenX;},{passive:true});
+    viewer.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-touchStart;if(Math.abs(dx)>60)moveViewer(dx<0?1:-1);},{passive:true});
+  </script>
+</body>
+</html>
